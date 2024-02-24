@@ -1,0 +1,20 @@
+
+resources:
+- deployment.yaml
+- service.yaml
+
+commonLabels:
+  app: kustomapp1
+
+commonAnnotations:
+  app: mykustom-annotations
+
+namePrefix:
+  kustom-
+
+nameSuffix:
+  -v1
+
+configMapGenerator:
+- name: mykustom-map
+  env: config.properties
