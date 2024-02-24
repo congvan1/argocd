@@ -4,9 +4,9 @@ metadata:
   name: mywebapp
   namespace: dev
 spec:
-  replicas: 2
+  replicas: 1
   template:
-    spec:
+    spec: # Pod spec
       containers:
       - name: mycontainer
         image: "devopsjourney1/mywebapp:latest"
@@ -15,6 +15,10 @@ spec:
         envFrom:
         - configMapRef:
             name: mykustom-map
-
-    
-            
+        resources:
+          requests:
+            memory: "16Mi" 
+            cpu: "50m"    # 500milliCPUs (1/2 CPU)
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
