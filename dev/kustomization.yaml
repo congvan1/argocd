@@ -1,7 +1,7 @@
 
 resources: 
-- deployment.yaml
-- service.yaml
+- app1-deployment.yaml
+- app1-service.yaml
 
 commonLabels:
   app: mykustomapp
