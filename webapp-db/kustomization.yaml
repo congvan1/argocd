@@ -1,0 +1,5 @@
+resources:
+- mongo.yaml
+
+commonLabels:
+  app: mongo
