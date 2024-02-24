@@ -4,7 +4,7 @@ resources:
 - app1-service.yaml
 
 commonLabels:
-  app: kustomapp1
+  app: kustomapp
 
 commonAnnotations:
   app: mykustom-annotations
@@ -18,3 +18,5 @@ nameSuffix:
 configMapGenerator:
 - name: mykustom-map
   env: config.properties
+
+
