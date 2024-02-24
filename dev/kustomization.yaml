@@ -1,13 +1,10 @@
 
 resources: 
-- app1-deployment.yaml
-- app1-service.yaml
+- deployment.yaml
+- service.yaml
 
 commonLabels:
-  app: mykustomapp
-
-commonAnnotations:
-  app: mykustom-annontations
+  app: myapp
 
 namePrefix:
   kustom-
