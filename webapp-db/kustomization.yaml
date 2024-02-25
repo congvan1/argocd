@@ -1,0 +1,17 @@
+resources:
+- mongo.yaml
+- webapp.yaml
+
+# commonLabels:
+#   app: mongodb
+
+secretGenerator:
+- name: mongo-secret
+  literals:
+  - mongo-user=bW9uZ291c2Vy
+  - mongo-password=bW9uZ29wYXNzd29yZA==
+
+configMapGenerator:
+- name: mongo-config
+  literals:
+  - mongo-url=mongo-service
