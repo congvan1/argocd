@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo-deployment
-  # labels:
-  #   app: mongo
+  labels:
+    app: mongo
 spec:
   replicas: 3
-  # selector:
-  #   matchLabels:
-  #     app: mongo
+  selector:
+    matchLabels:
+      app: mongo
   template:
-    # metadata:
-      # labels:
-      #   app: mongo
+    metadata:
+      labels:
+        app: mongo
     spec:
       containers:
       - name: mongodb
@@ -30,16 +30,15 @@ spec:
             secretKeyRef:
               name: mongo-secret
               key: mongo-password 
-          secret:
-            secretNname: mongo-secret
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mongo-service
 spec:
-  # selector:
-  #   app: mongo
+  selector:
+    app: mongo
   ports:
     - protocol: TCP
       port: 27017
