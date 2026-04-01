@@ -1,6 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
+  links:
+    - url: http://appauth-service-relationship-projector.stg-flink.vtvprime.vn/
+      title: flink-dashboard
+      icon: dashboard
   name: test-projector
   labels:
     app.cellutions.io/c_es.comment.comment.v1: "true"
@@ -16,10 +20,6 @@ metadata:
     cellutions.io/language: java
     argocd/app-name: sn-stg-vod-service
 spec:
-  links:
-    - url: http://appauth-service-relationship-projector.stg-flink.vtvprime.vn/
-      title: My Dashboard
-      icon: dashboard
   type: projector
   lifecycle: experimental
   owner: inc
