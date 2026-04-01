@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: redis-projector
+  name: test-projector
   labels:
     app.cellutions.io/c_es.comment.comment.v1: "true"
     app.cellutions.io/c_es.content.collection.v1: "true"
