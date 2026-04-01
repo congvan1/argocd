@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redis-projector
+  labels:
+    app.cellutions.io/c_es.comment.comment.v1: "true"
+    app.cellutions.io/c_es.content.collection.v1: "true"
+    app.cellutions.io/c_es.content.shortformvideo.v1: "true"
+    app.cellutions.io/c_es.content.vod.v1: "true"
+    app.cellutions.io/c_es.identity.user.v1: "true"
+    app.cellutions.io/c_es.playlist.user.v1: "true"
+    app.cellutions.io/c_es.vod.contentreview.v1: "true"
+    app.cellutions.io/c_es.vod.user.v1: "true"
+    app.cellutions.io/c_es.vod.vod.v1: "true"
+  annotations:
+    cellutions.io/language: java
+    argocd/app-name: sn-stg-vod-service
+spec:
+  type: projector
+  lifecycle: experimental
+  owner: inc
+  consumesApis:
+    - comment.asyncapi.graphql-server
+    - content.asyncapi.command-ingress
+    - identity.asyncapi.event-store-connector
+    - playlist.asyncapi.command-ingress
+    - vod.asyncapi.command-ingress
